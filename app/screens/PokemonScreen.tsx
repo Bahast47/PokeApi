@@ -10,15 +10,12 @@ type Props = { pokemonId: number };
 
 export default function PokemonScreen({ pokemonId }: Props) {
   const {
-    data: pokemon,
-    loading,
-    error,
-    request: getPokemon
-  } = useApi<Pokemon>(PokeApi.getPokemon)
+    data: pokemon, loading, error, request: getPokemon} = useApi<Pokemon>(PokeApi.getPokemon)
 
   useEffect(() => {
     getPokemon(pokemonId);
   }, [pokemonId])
+
 
   return (
     <SafeAreaView>
